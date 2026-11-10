@@ -167,6 +167,22 @@ simulate.bat
 
 ---
 
+## 📋 Project Roadmap
+
+| Step | Work | Output | Status |
+|------|------|--------|--------|
+| 1 | Architecture & specification (block diagram, parameters, metrics) | Spec | ✅ Done |
+| 2 | VHDL MIPS32 core (5-stage pipeline, subset ISA) | `mips32.vhd` + functional testbench | ✅ Done |
+| 3 | Scan insertion (scan flops, chain partitioning, scan-enable) | Scan-ready CUT | ✅ Done |
+| 4 | Baseline LBIST in VHDL (LFSR, phase shifter, MISR, controller) | Conventional STUMPS | ✅ Done |
+| 5 | TC-PRPG design in VHDL (threshold comparator, T-flops, programmable T) | Proposed generator | ✅ Done |
+| 6 | Measurement tooling: toggle rate & WSA counters, fault simulator (stuck-at) | Testbench & scripts | ✅ Done |
+| 7 | Simulation experiments: toggle rate vs. T, coverage vs. patterns, power proxy, MISR signature check | Results & plots | 🔄 In Progress |
+| 8 | Performance analysis: power reduction, coverage, test time, area overhead, comparison to baselines | Analysis | ⬜ Pending |
+| 9 | Final report assembly (Word/PDF) | Report | ⬜ Pending |
+
+---
+
 ## 👥 Team
 
 > Add your names here
@@ -178,3 +194,4 @@ simulate.bat
 - **Simulator**: Vivado Simulator (xsim)
 - **Language**: VHDL (IEEE 1076-2008)
 - **Target Device**: Not constrained (behavioural simulation only)
+
