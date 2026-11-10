@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_lbist_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="lbist_pkg" />
+            <top_module name="mips_pkg" />
+            <top_module name="tb_lbist" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="1,008.000001 us"></ZoomEndTime>
+      <Cursor1Time time="250.000000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="233"></NameColumnWidth>
+      <ValueColumnWidth column_width="295"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/tb_lbist/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/tc_en" type="logic">
+      <obj_property name="ElementShortName">tc_en</obj_property>
+      <obj_property name="ObjectShortName">tc_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/t" type="array">
+      <obj_property name="ElementShortName">t[7:0]</obj_property>
+      <obj_property name="ObjectShortName">t[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/n_patterns" type="array">
+      <obj_property name="ElementShortName">n_patterns[15:0]</obj_property>
+      <obj_property name="ObjectShortName">n_patterns[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/scan_en_o" type="logic">
+      <obj_property name="ElementShortName">scan_en_o</obj_property>
+      <obj_property name="ObjectShortName">scan_en_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/signature" type="array">
+      <obj_property name="ElementShortName">signature[31:0]</obj_property>
+      <obj_property name="ObjectShortName">signature[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/scan_in_o" type="array">
+      <obj_property name="ElementShortName">scan_in_o[15:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_in_o[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/cells_o" type="array">
+      <obj_property name="ElementShortName">cells_o[1455:0]</obj_property>
+      <obj_property name="ObjectShortName">cells_o[1455:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/mon_clr" type="logic">
+      <obj_property name="ElementShortName">mon_clr</obj_property>
+      <obj_property name="ObjectShortName">mon_clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/fin" type="other">
+      <obj_property name="ElementShortName">fin</obj_property>
+      <obj_property name="ObjectShortName">fin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/cell_tog" type="other">
+      <obj_property name="ElementShortName">cell_tog</obj_property>
+      <obj_property name="ObjectShortName">cell_tog</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/cell_cyc" type="other">
+      <obj_property name="ElementShortName">cell_cyc</obj_property>
+      <obj_property name="ObjectShortName">cell_cyc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/in_tog" type="other">
+      <obj_property name="ElementShortName">in_tog</obj_property>
+      <obj_property name="ObjectShortName">in_tog</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/in_pairs" type="other">
+      <obj_property name="ElementShortName">in_pairs</obj_property>
+      <obj_property name="ObjectShortName">in_pairs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist/N_PAT" type="other">
+      <obj_property name="ElementShortName">N_PAT</obj_property>
+      <obj_property name="ObjectShortName">N_PAT</obj_property>
+   </wvobject>
+</wave_config>

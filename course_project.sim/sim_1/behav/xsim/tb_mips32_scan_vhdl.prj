@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../course_project.srcs/sources_1/new/mips_pkg.vhd" \
+"../../../../course_project.srcs/sources_1/new/alu.vhd" \
+"../../../../course_project.srcs/sources_1/new/lbist_pkg.vhd" \
+"../../../../course_project.srcs/sources_1/new/mips_comb.vhd" \
+"../../../../course_project.srcs/sources_1/new/mips_scan_core.vhd" \
+"../../../../course_project.srcs/sim_1/new/tb_mips32_scan.vhd" \
+
+# Do not sort compile order
+nosort

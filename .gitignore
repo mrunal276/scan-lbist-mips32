@@ -1,0 +1,35 @@
+# Vivado .gitignore
+# Keeps: source VHDL, project file, simulation logs/results/waveform configs
+# Excludes: large binary build artifacts, compiled object files
+
+# ── Vivado compile cache ───────────────────────────────────────────────────────
+course_project.cache/compile_simlib/
+course_project.cache/sim/
+course_project.cache/wt/project.wpc
+course_project.cache/wt/xsim.wdf
+
+# ── xsim compiled object files & large binaries ───────────────────────────────
+course_project.sim/sim_1/behav/xsim/xsim.dir/
+course_project.sim/sim_1/behav/xsim/xelab.pb
+course_project.sim/sim_1/behav/xsim/xvhdl.pb
+course_project.sim/sim_1/behav/xsim/xvhdl.log
+course_project.sim/sim_1/behav/xsim/xsim.ini
+
+# ── Keep these simulation outputs (logs, results, scripts, waveforms) ──────────
+# (Nothing to exclude — keeping .log, .csv, .bat, .tcl, .wdb, .wcfg)
+
+# ── IP user files placeholder ─────────────────────────────────────────────────
+course_project.ip_user_files/
+
+# ── Hardware manager ──────────────────────────────────────────────────────────
+course_project.hw/
+
+# ── OS / editor junk ──────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

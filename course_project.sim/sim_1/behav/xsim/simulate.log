@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+Note: SCAN-CORE functional test PASSED (scan insertion preserved behaviour)
+Time: 1022 ns  Iteration: 0  Process: /tb_mips32_scan/stim  File: C:/Users/manog/OneDrive/Pictures/Documents/DFT_lab/course_project/course_project.srcs/sim_1/new/tb_mips32_scan.vhd
