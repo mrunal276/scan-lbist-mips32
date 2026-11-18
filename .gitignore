@@ -1,30 +1,41 @@
-# Vivado .gitignore
-# Keeps: source VHDL, project file, simulation logs/results/waveform configs
-# Excludes: large binary build artifacts, compiled object files
+# ==============================================================================
+# Vivado & Simulation Artifacts
+# ==============================================================================
+# Exclude Vivado temporary folders, compile caches, and implementation run files
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
 
-# ── Vivado compile cache ───────────────────────────────────────────────────────
-course_project.cache/compile_simlib/
-course_project.cache/sim/
-course_project.cache/wt/project.wpc
-course_project.cache/wt/xsim.wdf
+# Vivado command logs and journal files
+*.jou
+*.str
+vivado*.log
 
-# ── xsim compiled object files & large binaries ───────────────────────────────
+# xsim compiled object directories, binary waveform databases & intermediate files
 course_project.sim/sim_1/behav/xsim/xsim.dir/
-course_project.sim/sim_1/behav/xsim/xelab.pb
-course_project.sim/sim_1/behav/xsim/xvhdl.pb
+course_project.sim/sim_1/behav/xsim/*.pb
+course_project.sim/sim_1/behav/xsim/*.ini
+course_project.sim/sim_1/behav/xsim/*.wdb
+*.wdb
+
+# Intermediate compilation logs
 course_project.sim/sim_1/behav/xsim/xvhdl.log
-course_project.sim/sim_1/behav/xsim/xsim.ini
+course_project.sim/sim_1/behav/xsim/compile.log
 
-# ── Keep these simulation outputs (logs, results, scripts, waveforms) ──────────
-# (Nothing to exclude — keeping .log, .csv, .bat, .tcl, .wdb, .wcfg)
+# ==============================================================================
+# Python & Environment
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
 
-# ── IP user files placeholder ─────────────────────────────────────────────────
-course_project.ip_user_files/
-
-# ── Hardware manager ──────────────────────────────────────────────────────────
-course_project.hw/
-
-# ── OS / editor junk ──────────────────────────────────────────────────────────
+# ==============================================================================
+# OS & Editor Junk
+# ==============================================================================
 .DS_Store
 Thumbs.db
 desktop.ini

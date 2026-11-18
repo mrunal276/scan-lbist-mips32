@@ -1,7 +1,8 @@
--- tb_mips32.vhd : functional testbench for the MIPS32 core
+-- tb_mips32_scan.vhd : functional testbench for mips_scan_core (scan_en=0, test_mode=0)
 -- Program: sum = 5+4+3+2+1 (loop, bne), store/load (load-use stall),
 --          double, shift, slt, and store results.
 -- Expected data memory: [0]=15 [1]=30 [2]=120 [3]=1
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

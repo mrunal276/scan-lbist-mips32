@@ -5,6 +5,8 @@
 --   * scan-in toggle rate  = transitions of the PATTERN bits entering the chains
 --   * cell toggle rate     = transitions of ALL scan cells during shift (includes
 --                            the previous response being shifted out)
+--   * peak cell toggle     = max number of cells toggling in a single shift cycle,
+--                            as % of all scan cells (peak-power proxy)
 --   * test time in clock cycles, and the MISR signature
 -- Results are printed to the Tcl console AND written to lbist_results.csv.
 library ieee;
@@ -33,6 +35,7 @@ architecture sim of tb_lbist is
   signal mon_clr   : std_logic := '1';
   signal fin       : boolean := false;
   signal cell_tog, cell_cyc, in_tog, in_pairs : integer := 0;
+  signal peak_tog  : integer := 0;
 
   function popcount(v : std_logic_vector) return integer is
     variable c : integer := 0;
@@ -77,16 +80,19 @@ begin
     variable prev_sin   : std_logic_vector(N_CHAINS-1 downto 0) := (others => '0');
     variable prev_valid : boolean := false;
     variable ct, cc, it, ip : integer := 0;
+    variable pk, tnow       : integer := 0;
   begin
     if rising_edge(clk) then
       if mon_clr = '1' then
-        ct := 0; cc := 0; it := 0; ip := 0;
+        ct := 0; cc := 0; it := 0; ip := 0; pk := 0;
         prev_valid := false; prev_se := '0'; prev_cells := cells_o;
       else
         -- cells_o now shows the result of the PREVIOUS edge; it was a shift edge iff prev_se='1'
         if prev_se = '1' then
-          ct := ct + popcount(cells_o xor prev_cells);
+          tnow := popcount(cells_o xor prev_cells);
+          ct := ct + tnow;
           cc := cc + 1;
+          if tnow > pk then pk := tnow; end if;
         end if;
         prev_cells := cells_o;
         prev_se    := scan_en_o;
@@ -100,7 +106,7 @@ begin
           prev_valid := false;
         end if;
       end if;
-      cell_tog <= ct; cell_cyc <= cc; in_tog <= it; in_pairs <= ip;
+      cell_tog <= ct; cell_cyc <= cc; in_tog <= it; in_pairs <= ip; peak_tog <= pk;
     end if;
   end process;
 
@@ -116,7 +122,7 @@ begin
                        variable sg   : out std_logic_vector(31 downto 0)) is
       variable t0, t1 : time;
       variable cyc    : integer;
-      variable ir, cr, target : real;
+      variable ir, cr, pr, target : real;
     begin
       rst <= '1'; mon_clr <= '1'; start <= '0';
       tc_en <= tc; t <= std_logic_vector(to_unsigned(tv, 8));
@@ -136,21 +142,24 @@ begin
       cyc := (t1 - t0) / 10 ns;
       ir  := real(in_tog)   / real(in_pairs) * 100.0;
       cr  := real(cell_tog) / real(cell_cyc * N_CELLS) * 100.0;
+      pr  := real(peak_tog) / real(N_CELLS) * 100.0;
       if tc = '1' then target := real(tv) / 256.0 * 100.0; else target := 50.0; end if;
       sg := signature;
       report name & " | target=" & real'image(target) & "% | scan-in toggle=" & real'image(ir) &
-             "% | cell toggle=" & real'image(cr) & "% | cycles=" & integer'image(cyc) &
+             "% | cell toggle=" & real'image(cr) & "% | peak=" & real'image(pr) &
+             "% | cycles=" & integer'image(cyc) &
              " | MISR=" & to_hex(signature) severity note;
       write(l, name);  write(l, string'(","));
       write(l, target, right, 0, 3);  write(l, string'(","));
       write(l, ir, right, 0, 3);      write(l, string'(","));
       write(l, cr, right, 0, 3);      write(l, string'(","));
+      write(l, pr, right, 0, 3);      write(l, string'(","));
       write(l, cyc);                  write(l, string'(","));
       write(l, to_hex(signature));
       writeline(f, l);
     end procedure;
   begin
-    write(l, string'("config,target_pct,scanin_toggle_pct,cell_toggle_pct,cycles,misr"));
+    write(l, string'("config,target_pct,scanin_toggle_pct,cell_toggle_pct,peak_cell_toggle_pct,cycles,misr"));
     writeline(f, l);
 
     run_cfg('0', 128, "CONVENTIONAL", sig_conv);

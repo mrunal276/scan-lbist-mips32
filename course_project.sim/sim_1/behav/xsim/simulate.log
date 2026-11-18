@@ -1,3 +1,20 @@
 Time resolution is 1 ps
-Note: SCAN-CORE functional test PASSED (scan insertion preserved behaviour)
-Time: 1022 ns  Iteration: 0  Process: /tb_mips32_scan/stim  File: C:/Users/manog/OneDrive/Pictures/Documents/DFT_lab/course_project/course_project.srcs/sim_1/new/tb_mips32_scan.vhd
+Note: CONVENTIONAL | target=5.000000e+01% | scan-in toggle=4.990512e+01% | cell toggle=4.674342e+01% | peak=5.350275e+01% | cycles=9292 | MISR=FF85C833
+Time: 92996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+Note: TC_T13 | target=5.078125e+00% | scan-in toggle=5.126513e+00% | cell toggle=5.408607e+00% | peak=7.829670e+00% | cycles=9292 | MISR=142649B3
+Time: 185996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+Note: TC_T26 | target=1.015625e+01% | scan-in toggle=1.007632e+01% | cell toggle=9.934034e+00% | peak=1.277473e+01% | cycles=9292 | MISR=58DBE41A
+Time: 278996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+Note: TC_T51 | target=1.992188e+01% | scan-in toggle=1.980404e+01% | cell toggle=1.911116e+01% | peak=2.293956e+01% | cycles=9292 | MISR=E3D3B280
+Time: 371996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+Note: TC_T77 | target=3.007812e+01% | scan-in toggle=2.997662e+01% | cell toggle=2.825280e+01% | peak=3.379121e+01% | cycles=9292 | MISR=CB11B921
+Time: 464996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+Note: TC_T128 | target=5.000000e+01% | scan-in toggle=4.992574e+01% | cell toggle=4.671376e+01% | peak=5.302198e+01% | cycles=9292 | MISR=02CF5D77
+Time: 557996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+Note: TC_T26_repeat | target=1.015625e+01% | scan-in toggle=1.007632e+01% | cell toggle=9.934034e+00% | peak=1.277473e+01% | cycles=9292 | MISR=58DBE41A
+Time: 650996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+Note: Signature reproducibility check PASSED
+Time: 650996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+Note: Expected test cycles per run = N*(L+1)+L = 9291 (+1 for start handshake)
+Time: 650996 ns  Iteration: 0  Process: /tb_lbist/stim  File: C:/Users/Mrunal/scan-based-lbist/course_project.srcs/sim_1/new/tb_lbist.vhd
+INFO: xsimkernel Simulation Memory Usage: 20280 KB (Peak: 20280 KB), Simulation CPU Usage: 13374 ms
