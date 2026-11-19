@@ -245,7 +245,7 @@ python generate_plots.py
 | 6 | Automated measurement tooling (toggle counters, WSA, fault injection testbench) | `tb_lbist.vhd`, `tb_fault_sim.vhd`, CSV loggers | ✅ Done |
 | 7 | Simulation experiments ($T \in [13, 128]$, peak toggle, signature verification) | `lbist_results.csv`, `fault_coverage.csv`, `simulate.log` | ✅ Done |
 | 8 | Performance & hardware analysis (power reduction, 100% coverage, FPGA synthesis) | `reports/`, `generate_plots.py`, publication figures | ✅ Done |
-| 9 | Final report documentation & compilation | Formal project report / manuscript | ⬜ Pending |
+| 9 | Final report documentation & compilation | `dft_project_report.tex`, `Dft project report G4.pdf` | ✅ Done |
 
 ---
 
